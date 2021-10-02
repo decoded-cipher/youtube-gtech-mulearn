@@ -10,15 +10,15 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-        GTech 𝝁Learn Youtube
+        GTech 𝝁Learn Industry Connect
         </h1>
 
-        <p className="description"> Youtube Links of GTech 𝝁Learn events</p>
+        <p className="description"> Youtube links of GTech 𝝁Learn Industry Connect</p>
 
         <div className="grid">
 
           <a href="https://www.youtube.com/watch?v=o-3x_9yWHVk" className="card">
-            <h3>GTECH 𝝁Learn - Suntec Company Launch</h3>
+            <h3>GTECH 𝝁Learn - SunTec Company Launch</h3>
             <p>SunTec Business Solutions Pvt. Ltd</p>
           </a>
 
