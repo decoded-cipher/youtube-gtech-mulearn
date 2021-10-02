@@ -14,6 +14,9 @@ export default function Home() {
         </h1>
 
         <p className="description"> Youtube live of GTech 𝝁Learn Industry Connect</p>
+    
+    <div className="grid">
+    <h2>Click on the box &darr;</h2></div>
 
         <div className="grid">
 
