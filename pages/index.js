@@ -131,7 +131,7 @@ export default function Home() {
           flex-basis: 45%;
           padding: 1.5rem;
           text-align: left;
-          color: inherit;
+          color: #0070f3;
           text-decoration: none;
           border: 1px solid #eaeaea;
           border-radius: 10px;
@@ -141,8 +141,8 @@ export default function Home() {
         .card:hover,
         .card:focus,
         .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
+          color: #c4302b;
+          border-color: #c4302b;
         }
 
         .card h3 {
