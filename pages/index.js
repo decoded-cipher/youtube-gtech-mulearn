@@ -18,7 +18,7 @@ export default function Home() {
         <div className="grid">
 
           <a href="https://www.youtube.com/watch?v=o-3x_9yWHVk" className="card">
-            <h3>GTECH 𝝁Learn - SunTec Company Launch</h3>
+            <h3>GTECH 𝝁Learn - SunTec Company Launch &rarr;</h3>
             <p>SunTec Business Solutions Pvt. Ltd</p>
           </a>
 
