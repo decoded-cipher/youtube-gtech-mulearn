@@ -13,7 +13,7 @@ export default function Home() {
         GTech 𝝁Learn Industry Connect
         </h1>
 
-        <p className="description"> Youtube links of GTech 𝝁Learn Industry Connect</p>
+        <p className="description"> Youtube live of GTech 𝝁Learn Industry Connect</p>
 
         <div className="grid">
 
