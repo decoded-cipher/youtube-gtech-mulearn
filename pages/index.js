@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import {data} from '../companies'
 
 export default function Home() {
   return (
