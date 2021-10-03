@@ -22,6 +22,7 @@ export default function Home() {
 
           <a href="https://www.youtube.com/watch?v=o-3x_9yWHVk" className="card">
             <h3>Day 1 &rarr;</h3>
+            <img src="/Day1.png" className="image"/>
             <p>SunTec Business Solutions Pvt. Ltd</p>
           </a>
 
@@ -30,13 +31,9 @@ export default function Home() {
       </main>
 
       <footer>
-        <a
-          href="https://aks.one"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://atfg.gtechindia.org/" target="_blank" rel="noopener noreferrer">
           Powered by{' '}
-          <img src="/aks.one.png" alt="aks.one" className="logo" />
+           <img src="/logo.png" alt="Gtech Mulearn" className="logo" />
         </a>
       </footer>
 
@@ -124,11 +121,28 @@ export default function Home() {
           align-items: center;
           justify-content: center;
           flex-wrap: wrap;
-
           max-width: 800px;
           margin-top: 3rem;
         }
 
+        .click {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 1rem;
+        }
+
+        .center {
+          display: flex;
+          justify-content: center;
+        }
+
+        .image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          max-width: 300px;
+        }
         .card {
           margin: 1rem;
           flex-basis: 45%;
