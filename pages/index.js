@@ -163,6 +163,8 @@ export default function Home() {
         }
 
         .card h3 {
+          display: flex;
+          justify-content: center;
           margin: 0 0 1rem 0;
           font-size: 1.5rem;
         }
@@ -174,7 +176,7 @@ export default function Home() {
         }
 
         .logo {
-          height: 1em;
+          height: 2em;
         }
 
         @media (max-width: 600px) {
