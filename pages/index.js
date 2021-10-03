@@ -20,11 +20,13 @@ export default function Home() {
 
         <div className="grid">
 
-          <a href="https://www.youtube.com/watch?v=o-3x_9yWHVk" className="card">
-            <h3>Day 1 &rarr;</h3>
-            <img src="/Day1.png" className="image"/>
-            <p>SunTec Business Solutions Pvt. Ltd</p>
-          </a>
+          {data.map(item => (
+            <a href={item.siteURL} className="card">
+              <h3>{item.siteName}</h3>
+             <img src={item.siteImage} className="image"/>
+            <p>{item.siteDesc}</p>
+            </a>
+          ))}
 
 
         </div>
@@ -94,7 +96,7 @@ export default function Home() {
         .title {
           margin: 0;
           line-height: 1.15;
-          font-size: 4rem;
+          font-size: 2rem;
         }
 
         .title,
