@@ -275,6 +275,8 @@ export default function Home() {
         }
         .card p {
           margin: 0;
+          align-items: center;
+          justify-content: center;
           font-size: 1.25rem;
           line-height: 1.5;
         }
