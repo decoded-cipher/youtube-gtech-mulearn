@@ -1,5 +1,11 @@
 export const data=[
     {
+        "siteName":"Day 3",
+        "siteURL":"https://www.youtube.com/channel/UCTokQMC1BvrPk6PU1PmkNSA/videos",
+        "siteImage":"/Day3.png",
+        "siteDesc":"Travancore Analytics Pvt. Ltd"
+    },
+    {
         "siteName":"Day 2",
         "siteURL":"https://www.youtube.com/watch?v=dcWeYHmMARA",
         "siteImage":"/Day2.png",
