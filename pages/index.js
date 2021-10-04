@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import {data} from '../companies'
+import { data } from '../companies'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+
 
 const minuteSeconds = 60;
 const hourSeconds = 3600;
@@ -8,8 +9,8 @@ const daySeconds = 86400;
 
 const timerProps = {
   isPlaying: true,
-  size: 120,
-  strokeWidth: 6
+  size: 80,
+  strokeWidth: 5
 };
 
 const renderTime = (dimension, time) => {
@@ -43,12 +44,12 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-        GTech 𝝁Learn Industry Connect
+          GTech 𝝁Learn Industry Connect
         </h1>
 
         <p className="description"> Youtube live of Industry introductory meet</p>
-    
-    <div className="timer">
+
+        <div className="timer">
         <div className="timer1">
           <CountdownCircleTimer
             {...timerProps}
@@ -181,7 +182,7 @@ export default function Home() {
         .title {
           margin: 0;
           line-height: 1;
-          font-size: 2rem;
+          font-size: 1.5rem;
         }
         .title,
         .description {
@@ -189,30 +190,28 @@ export default function Home() {
         }
         .description {
           line-height: 1.5;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
         }
         .timer {
           display: flex;
         }
         .timer1 {
-          padding-top: 20px;
-          padding-right: 20px;
-          padding-left: 20px;
+          padding-top: 15px;
+          padding-right: 15px;
+          padding-left: 15px;
         }
         .timer2 {
-          padding-top: 20px;
-          padding-right: 20px;
-          padding-left: 20px;
+          padding-top: 15px;
+          padding-right: 8px;
         }
         .timer3 {
-          padding-top: 20px;
-          padding-right: 20px;
-          padding-left: 20px;
+          padding-top: 15px;
+          padding-left: 8px;
         }
         .timer4 {
-          padding-top: 20px;
-          padding-right: 20px;
-          padding-left: 20px;
+          padding-top: 15px;
+          padding-right: 15px;
+          padding-left: 15px;
         }
         code {
           background: #fafafa;
@@ -274,9 +273,8 @@ export default function Home() {
           font-size: 1.5rem;
         }
         .card p {
-          margin: 0;
-          align-items: center;
           justify-content: center;
+          margin: 0;
           font-size: 1.25rem;
           line-height: 1.5;
         }
