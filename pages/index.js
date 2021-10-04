@@ -1,7 +1,39 @@
 import Head from 'next/head'
 import {data} from '../companies'
+import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+
+const minuteSeconds = 60;
+const hourSeconds = 3600;
+const daySeconds = 86400;
+
+const timerProps = {
+  isPlaying: true,
+  size: 120,
+  strokeWidth: 6
+};
+
+const renderTime = (dimension, time) => {
+  return (
+    <div className="time-wrapper">
+      <div className="time">{time}</div>
+      <div>{dimension}</div>
+    </div>
+  );
+};
+
+const getTimeSeconds = (time) => (minuteSeconds - time) | 0;
+const getTimeMinutes = (time) => ((time % hourSeconds) / minuteSeconds) | 0;
+const getTimeHours = (time) => ((time % daySeconds) / hourSeconds) | 0;
+const getTimeDays = (time) => (time / daySeconds) | 0;
 
 export default function Home() {
+  const startTime = Date.now() / 1000; // use UNIX timestamp in seconds
+  const endTime = 1633433400; // use UNIX timestamp in seconds
+
+  const remainingTime = endTime - startTime;
+  const days = Math.ceil(remainingTime / daySeconds);
+  const daysDuration = days * daySeconds;
+
   return (
     <div className="container">
       <Head>
@@ -16,16 +48,76 @@ export default function Home() {
 
         <p className="description"> Youtube live of Industry introductory meet</p>
     
-    <div className="grid">
-    <h2>Click on the box &darr;</h2></div>
+    <div className="timer">
+        <div className="timer1">
+          <CountdownCircleTimer
+            {...timerProps}
+            colors={[["#7E2E84"]]}
+            duration={daysDuration}
+            initialRemainingTime={remainingTime}
+          >
+            {({ elapsedTime }) =>
+              renderTime("days", getTimeDays(daysDuration - elapsedTime))
+            }
+          </CountdownCircleTimer>
+          </div>
+          <div className="timer2">
+          <CountdownCircleTimer
+            {...timerProps}
+            colors={[["#D14081"]]}
+            duration={daySeconds}
+            initialRemainingTime={remainingTime % daySeconds}
+            onComplete={(totalElapsedTime) => [
+              remainingTime - totalElapsedTime > hourSeconds
+            ]}
+          >
+            {({ elapsedTime }) =>
+              renderTime("hours", getTimeHours(daySeconds - elapsedTime))
+            }
+          </CountdownCircleTimer>
+          </div>
+          <div className="timer3">
+          <CountdownCircleTimer
+            {...timerProps}
+            colors={[["#EF798A"]]}
+            duration={hourSeconds}
+            initialRemainingTime={remainingTime % hourSeconds}
+            onComplete={(totalElapsedTime) => [
+              remainingTime - totalElapsedTime > minuteSeconds
+            ]}
+          >
+            {({ elapsedTime }) =>
+              renderTime("minutes", getTimeMinutes(hourSeconds - elapsedTime))
+            }
+          </CountdownCircleTimer>
+          </div>
+          <div className="timer4">
+          <CountdownCircleTimer
+            {...timerProps}
+            colors={[["#218380"]]}
+            duration={minuteSeconds}
+            initialRemainingTime={remainingTime % minuteSeconds}
+            onComplete={(totalElapsedTime) => [
+              remainingTime - totalElapsedTime > 0
+            ]}
+          >
+            {({ elapsedTime }) =>
+              renderTime("seconds", getTimeSeconds(elapsedTime))
+            }
+          </CountdownCircleTimer>
+        </div>
+        </div>
+
+        <div className="click">
+          <h2>Click on the box &darr;</h2></div>
 
         <div className="grid">
 
           {data.map(item => (
             <a href={item.siteURL} className="card">
               <h3>{item.siteName}</h3>
-             <img src={item.siteImage} className="image"/>
-            <p>{item.siteDesc}</p>
+              <img src={item.siteImage} className="image" />
+              <p>{item.siteDesc}</p>
             </a>
           ))}
 
@@ -36,7 +128,7 @@ export default function Home() {
       <footer>
         <a href="https://atfg.gtechindia.org/" target="_blank" rel="noopener noreferrer">
           Powered by{' '}
-           <img src="/logo.png" alt="Gtech Mulearn" className="logo" />
+          <img src="/logo.png" alt="Gtech Mulearn" className="logo" />
         </a>
       </footer>
 
@@ -49,7 +141,6 @@ export default function Home() {
           justify-content: center;
           align-items: center;
         }
-
         main {
           padding: 5rem 0;
           flex: 1;
@@ -58,7 +149,6 @@ export default function Home() {
           justify-content: center;
           align-items: center;
         }
-
         footer {
           width: 100%;
           height: 100px;
@@ -67,49 +157,63 @@ export default function Home() {
           justify-content: center;
           align-items: center;
         }
-
         footer img {
           margin-left: 0.5rem;
         }
-
         footer a {
           display: flex;
           justify-content: center;
           align-items: center;
         }
-
         a {
           color: inherit;
           text-decoration: none;
         }
-
         .title a {
           color: #0070f3;
           text-decoration: none;
         }
-
         .title a:hover,
         .title a:focus,
         .title a:active {
           text-decoration: underline;
         }
-
         .title {
           margin: 0;
-          line-height: 1.15;
+          line-height: 1;
           font-size: 2rem;
         }
-
         .title,
         .description {
           text-align: center;
         }
-
         .description {
           line-height: 1.5;
           font-size: 1.5rem;
         }
-
+        .timer {
+          display: flex;
+        }
+        .timer1 {
+          padding-top: 20px;
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+        .timer2 {
+          padding-top: 20px;
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+        .timer3 {
+          padding-top: 20px;
+          padding-right: 20px;
+          padding-left: 20px;
+        }
+        .timer4 {
+          padding-top: 20px;
+          padding-right: 20px;
+          padding-left: 20px;
+        }
         code {
           background: #fafafa;
           border-radius: 5px;
@@ -118,7 +222,6 @@ export default function Home() {
           font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
-
         .grid {
           display: flex;
           align-items: center;
@@ -146,6 +249,7 @@ export default function Home() {
           justify-content: center;
           max-width: 300px;
         }
+
         .card {
           margin: 1rem;
           flex-basis: 45%;
@@ -157,31 +261,26 @@ export default function Home() {
           border-radius: 10px;
           transition: color 0.15s ease, border-color 0.15s ease;
         }
-
         .card:hover,
         .card:focus,
         .card:active {
           color: #c4302b;
           border-color: #c4302b;
         }
-
         .card h3 {
           display: flex;
           justify-content: center;
           margin: 0 0 1rem 0;
           font-size: 1.5rem;
         }
-
         .card p {
           margin: 0;
           font-size: 1.25rem;
           line-height: 1.5;
         }
-
         .logo {
           height: 2em;
         }
-
         @media (max-width: 600px) {
           .grid {
             width: 100%;
@@ -199,7 +298,6 @@ export default function Home() {
             Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
             sans-serif;
         }
-
         * {
           box-sizing: border-box;
         }
