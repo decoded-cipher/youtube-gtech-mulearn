@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import { data } from '../companies'
+import { today } from '../today'
+import { past } from '../past'
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 
 
@@ -112,10 +113,21 @@ export default function Home() {
         <div className="click">
           <h2>Click on the box &darr;</h2></div>
 
+          <div className="grid">
+          {today.map(item => (
+            <a href={item.siteURL} className="card">
+              <h3>{item.siteName}</h3>
+              <img src={item.siteImage} className="image" />
+              <p>{item.siteDesc}</p>
+              </a>
+          ))}
+          </div>
+
+
         <div className="grid">
 
-          {data.map(item => (
-            <a href={item.siteURL} className="card">
+          {past.map(item => (
+            <a href={item.siteURL} className="cardpast">
               <h3>{item.siteName}</h3>
               <img src={item.siteImage} className="image" />
               <p>{item.siteDesc}</p>
@@ -250,14 +262,14 @@ export default function Home() {
         }
 
         .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
+          margin: 0.5rem;
+          flex-basis: 40%;
+          padding: 0.5rem;
           text-align: left;
           color: #0070f3;
           text-decoration: none;
           border: 1px solid #eaeaea;
-          border-radius: 10px;
+          border-radius: 8px;
           transition: color 0.15s ease, border-color 0.15s ease;
         }
         .card:hover,
@@ -274,6 +286,40 @@ export default function Home() {
         }
         .card p {
           justify-content: center;
+          align-items: center;
+          text-align: center;
+          margin: 0;
+          font-size: 1.25rem;
+          line-height: 1.5;
+        }
+
+        .cardpast {
+          margin: 1rem;
+          flex-basis: 45%;
+          padding: 1.5rem;
+          text-align: left;
+          color: #0070f3;
+          text-decoration: none;
+          border: 1px solid #eaeaea;
+          border-radius: 10px;
+          transition: color 0.15s ease, border-color 0.15s ease;
+        }
+        .cardpast:hover,
+        .cardpast:focus,
+        .cardpast:active {
+          color: #c4302b;
+          border-color: #c4302b;
+        }
+        .cardpast h3 {
+          display: flex;
+          justify-content: center;
+          margin: 0 0 1rem 0;
+          font-size: 1.5rem;
+        }
+        .cardpast p {
+          justify-content: center;
+          text-align: center;
+          align-items: center;
           margin: 0;
           font-size: 1.25rem;
           line-height: 1.5;
