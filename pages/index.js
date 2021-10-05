@@ -128,6 +128,9 @@ export default function Home() {
           ))}
           </div>
 
+         <div className="click">
+          <h3>Past Event</h3></div>
+
 
         <div className="grid">
 
@@ -256,6 +259,13 @@ export default function Home() {
           align-items: center;
           justify-content: center;
           margin-top: 1rem;
+        }
+          .click h3 {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 2rem;
+          font-size: 1.25rem;
         }
 
         .center {
