@@ -30,7 +30,12 @@ const getTimeDays = (time) => (time / daySeconds) | 0;
 
 export default function Home() {
   const startTime = Date.now() / 1000; // use UNIX timestamp in seconds
-  const endTime = 1633433400; // use UNIX timestamp in seconds
+  let endTime=0
+  if(today[0]){
+    endTime = new Date(today[0].eventTime)/1000; // use UNIX timestamp in seconds
+  }
+  
+  
 
   const remainingTime = endTime - startTime;
   const days = Math.ceil(remainingTime / daySeconds);
@@ -211,19 +216,23 @@ export default function Home() {
           display: flex;
         }
         .timer1 {
+          text-align: center;
           padding-top: 15px;
           padding-right: 15px;
           padding-left: 15px;
         }
         .timer2 {
+          text-align: center;
           padding-top: 15px;
           padding-right: 8px;
         }
         .timer3 {
+          text-align: center;
           padding-top: 15px;
           padding-left: 8px;
         }
         .timer4 {
+          text-align: center;
           padding-top: 15px;
           padding-right: 15px;
           padding-left: 15px;
