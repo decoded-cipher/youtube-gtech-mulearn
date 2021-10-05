@@ -30,7 +30,12 @@ const getTimeDays = (time) => (time / daySeconds) | 0;
 
 export default function Home() {
   const startTime = Date.now() / 1000; // use UNIX timestamp in seconds
-  const endTime = new Date(today[0].eventTime)/1000; // use UNIX timestamp in seconds
+  let endTime=0
+  if(today[0]){
+    endTime = new Date(today[0].eventTime)/1000; // use UNIX timestamp in seconds
+  }
+  
+  
 
   const remainingTime = endTime - startTime;
   const days = Math.ceil(remainingTime / daySeconds);
