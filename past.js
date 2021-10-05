@@ -2,7 +2,7 @@ export const past=[
     {
         "siteName":"Day 2",
         "siteURL":"https://www.youtube.com/watch?v=dcWeYHmMARA",
-        "siteImage":"/Day2.jpg",
+        "siteImage":"/Day2.png",
         "siteDesc":"Zerone Consulting Pvt. Ltd"
     },
     {
