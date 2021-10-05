@@ -129,7 +129,7 @@ export default function Home() {
           </div>
 
          <div className="click">
-          <h3>Past Event</h3></div>
+          <h3>Past Events</h3></div>
 
 
         <div className="grid">
