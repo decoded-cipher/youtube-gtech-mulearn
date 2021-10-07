@@ -1,9 +1,9 @@
 export const today = [
     {
-        "siteName": "Day 4",
-        "siteURL": "https://youtu.be/KQx_2djgC_o",
-        "siteImage": "/Day4.png",
-        "siteDesc": "Ecesis BPO Services Pvt Ltd",
-        "eventTime":"Tue Oct 06 2021 17:00:00 GMT+0530 (India Standard Time)"
+        "siteName": "Day 5",
+        "siteURL": "https://youtu.be/JfJ15haSEmo",
+        "siteImage": "/Day5.png",
+        "siteDesc": "PIT Solutions Pvt Ltd",
+        "eventTime":"Thu Oct 07 2021 17:00:00 GMT+0530 (India Standard Time)"
     },
 ]
